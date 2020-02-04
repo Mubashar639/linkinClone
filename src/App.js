@@ -7,15 +7,20 @@ import "./App.css";
 // Components
 import NavBar from "./Components/NavBar/NavBar";
 
+// Pages
+import Home from "./Pages/Profile";
+
 function App() {
   return (
     <>
-
-        <NavBar />
-        {/* <Router basename="/">
-
-      </Router> */}
-
+      <NavBar />
+      <Router basename="/">
+        <Container>
+          <Switch>
+            <Route exact path="/" component={Home} />
+          </Switch>
+        </Container>
+      </Router>
     </>
   );
 }

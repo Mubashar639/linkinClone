@@ -7,7 +7,7 @@ function ProfileReducer(
   action
 ) {
   console.log("data in action", action.data);
-  console.log(action.type);
+  console.log("Action type", action.type);
 
   switch (action.type) {
     case ProfileActions.GET_ONE_PROFILE:

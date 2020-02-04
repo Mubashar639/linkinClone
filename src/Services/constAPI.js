@@ -1,6 +1,7 @@
 // API
-const API_URL = process.env.BASE_API;
-const PROFILES = process.env.PROFILES;
-const EXPERIENCES = process.env.EXPERIENCES;
+const API_URL = process.env.REACT_APP_BASE_API;
+const PROFILES = process.env.REACT_APP_PROFILES;
+const EXPERIENCES = process.env.REACT_APP_EXPERIENCES;
+const USERNAME = process.env.REACT_APP_USERNAME;
 
-export { API_URL, PROFILES, EXPERIENCES };
+export { API_URL, PROFILES, EXPERIENCES, USERNAME };
