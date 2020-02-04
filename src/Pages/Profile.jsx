@@ -1,12 +1,5 @@
 import React, { useEffect, useState } from "react";
-import {
-  Container,
-  Col,
-  Card,
-  Button,
-  Form,
-  FormControl
-} from "react-bootstrap";
+import { Row, Col, Jumbotron, Container, Image } from "react-bootstrap";
 import ProfileMiddleware from "../Store/Middleware/ProfileMiddleware";
 import PropTypes from "prop-types";
 import { useDispatch, useSelector } from "react-redux";
@@ -18,15 +11,30 @@ const Home = () => {
     profiles: state.ProfileReducer.profiles
   }));
 
-  console.log("Do we have it???? ", profiles);
-
   useEffect(() => {
     dispatch(ProfileMiddleware.getOneProfile(USERNAME));
   }, [dispatch]);
 
-  console.log("Profiles Data", profiles);
-
-  return (<> <h1>{profiles.firstname}</h1></>);
+  return (
+    <>
+      <Jumbotron>
+        <Container>
+          <Row>
+            <Col md={6}>
+              <Image src={profiles.imageUrl} alt="profile" roundedCircle />
+            </Col>
+            <Col md={6}>
+              <h1>{profiles.firstname + " " + profiles.surname}</h1>
+              <h4>{profiles.title}</h4>
+              <h5>{profiles.area}</h5>
+              <p>{profiles.email}</p>
+              <p>{profiles.bio}</p>
+            </Col>
+          </Row>
+        </Container>
+      </Jumbotron>
+    </>
+  );
 };
 
 export default Home;
