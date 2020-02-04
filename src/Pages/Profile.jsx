@@ -26,12 +26,7 @@ const Home = () => {
 
   console.log("Profiles Data", profiles);
 
-  return (
-    <>
-      {profiles.data &&
-        [profiles.data].map((p, k) => <h1>${p.profiles.firstname}</h1>)}
-    </>
-  );
+  return (<> <h1>{profiles.firstname}</h1></>);
 };
 
 export default Home;
