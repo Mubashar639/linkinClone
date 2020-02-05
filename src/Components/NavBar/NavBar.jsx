@@ -20,6 +20,7 @@ function NavBar() {
         sticky="top"
         className="nav-li-bg justify-content-between"
         variant="light"
+        expand="lg"
       >
         <Container>
           <Navbar.Brand href="/">
