@@ -4,7 +4,7 @@ import { ProfileMiddleware } from "../Store/Middleware";
 import { PropTypes } from "prop-types";
 import { useDispatch, useSelector } from "react-redux";
 import { USERNAME } from "../Services/constAPI";
-import Experience from "../Components/Experiences/Experiences";
+import Experiences from "../Components/Experiences/Experiences";
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -34,7 +34,7 @@ const Home = () => {
           </Row>
         </Container>
       </Jumbotron>
-      <Experience />
+      <Experiences />
     </>
   ) : (
     <h3 className="red-text mt-5">The profile is not available</h3>
