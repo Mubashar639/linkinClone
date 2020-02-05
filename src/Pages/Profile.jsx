@@ -9,16 +9,21 @@ import { Spinner } from "../Components/Spinner/Spinner.js";
 
 const Home = () => {
   const dispatch = useDispatch();
+  let [isLoader, setLoader] = useState(true);
   const { profiles, displaySpinner } = useSelector(state => ({
     profiles: state.ProfileReducer.profiles,
     displaySpinner: state.ProfileReducer.displaySpinner
   }));
 
   useEffect(() => {
+    setLoader(displaySpinner)
+  }, [displaySpinner])
+
+  useEffect(() => {
     dispatch(ProfileMiddleware.getOneProfile(USERNAME));
   }, [dispatch]);
 
-  return !profiles.object ? (
+  return Object.keys(profiles).length !== 0 ? (
     <>
 
       <Jumbotron>
@@ -35,7 +40,7 @@ const Home = () => {
               <p>{profiles.bio}</p>
             </Col>
           </Row>
-          <Spinner displaySpinner={displaySpinner} />
+          <Spinner displaySpinner={isLoader} />
         </Container>
       </Jumbotron>
       <Experiences />
@@ -45,8 +50,10 @@ const Home = () => {
   );
 };
 
+
+
 Home.propTypes = {
-  profiles: PropTypes.object
+  profiles: PropTypes.object.isRequired
 };
 
 export default Home;

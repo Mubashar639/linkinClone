@@ -2,6 +2,10 @@ body {
 
 }
 
+.nav-link {
+  color: rgb(255, 255, 255)!important;
+}
+
 .nav-li-bg {
   background-color: #283E4A;
 }
