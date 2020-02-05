@@ -1,4 +1,4 @@
-import ProfileActions from "../Actions/ProfileActions";
+import { ProfileActions } from "../Actions";
 
 function ProfileReducer(
   state = {

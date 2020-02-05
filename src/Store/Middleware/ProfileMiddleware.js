@@ -1,5 +1,5 @@
 import { getOneProfileByUsername } from "../../Services/api";
-import ProfileActions from "../Actions/ProfileActions";
+import { ProfileActions } from "../Actions";
 
 class ProfileMiddleware {
   static getOneProfile = data => {

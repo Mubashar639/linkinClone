@@ -4,9 +4,11 @@ import thunk from "redux-thunk";
 import logger from "redux-logger";
 
 // Reducers
-import ProfileReducer from "./Reducers/ProfileReducer";
+import { ProfileReducer } from "./Reducers";
 
+// All reducers
 const rootReducer = combineReducers({ ProfileReducer });
+
 function configureStore() {
   return createStore(
     rootReducer,
