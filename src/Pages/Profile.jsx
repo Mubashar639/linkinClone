@@ -37,4 +37,8 @@ const Home = () => {
   );
 };
 
+Home.propTypes = {
+  profiles: PropTypes.number
+};
+
 export default Home;
