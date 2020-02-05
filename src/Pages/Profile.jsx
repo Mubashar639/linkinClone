@@ -5,11 +5,13 @@ import { PropTypes } from "prop-types";
 import { useDispatch, useSelector } from "react-redux";
 import { USERNAME } from "../Services/constAPI";
 import Experiences from "../Components/Experiences/Experiences";
+import { Spinner } from "../Components/Spinner/Spinner.js";
 
 const Home = () => {
   const dispatch = useDispatch();
-  const { profiles } = useSelector(state => ({
-    profiles: state.ProfileReducer.profiles
+  const { profiles, displaySpinner } = useSelector(state => ({
+    profiles: state.ProfileReducer.profiles,
+    displaySpinner: state.ProfileReducer.displaySpinner
   }));
 
   useEffect(() => {
@@ -18,6 +20,7 @@ const Home = () => {
 
   return !profiles.object ? (
     <>
+
       <Jumbotron>
         <Container>
           <Row>
@@ -32,6 +35,7 @@ const Home = () => {
               <p>{profiles.bio}</p>
             </Col>
           </Row>
+          <Spinner displaySpinner={displaySpinner} />
         </Container>
       </Jumbotron>
       <Experiences />

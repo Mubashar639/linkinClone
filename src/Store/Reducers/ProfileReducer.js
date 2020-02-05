@@ -2,7 +2,8 @@ import { ProfileActions } from "../Actions";
 
 function ProfileReducer(
   state = {
-    profiles: {}
+    profiles: {},
+    displaySpinner: false
   },
   action
 ) {
@@ -12,12 +13,14 @@ function ProfileReducer(
   switch (action.type) {
     case ProfileActions.GET_ONE_PROFILE:
       return {
-        ...state
+        ...state,
+        displaySpinner: true
       };
     case ProfileActions.GET_ONE_PROFILE_SUCCESS:
       return {
         ...state,
-        profiles: action.data
+        profiles: action.data,
+        displaySpinner: false
       };
     default:
       return state;
