@@ -20,12 +20,18 @@ const createAPIQuery = urlGenerator => async (...params) => {
   }
 };
 
+// Profiles
 export const getProfiles = createAPIQuery(
   () => `${API_URL}${PROFILES}`
 );
 
 export const getOneProfileByUsername = createAPIQuery(
   username => `${API_URL}${PROFILES}/user/${username}`
+);
+
+// Experiences
+export const getExperiencesProfile = createAPIQuery(
+  username => `${API_URL}${EXPERIENCES}/${username}`
 );
 
 createAPIQuery.propTypes = {
