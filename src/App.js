@@ -9,6 +9,7 @@ import NavBar from "./Components/NavBar/NavBar";
 
 // Pages
 import Home from "./Pages/Profile";
+import Feeds from "./Pages/Feeds";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Container>
           <Switch>
             <Route exact path="/" component={Home} />
+            <Route exact path="/pages/feeds" component={Feeds} />
           </Switch>
         </Container>
       </Router>

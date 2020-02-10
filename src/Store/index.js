@@ -4,10 +4,10 @@ import thunk from "redux-thunk";
 import logger from "redux-logger";
 
 // Reducers
-import { ProfileReducer, ExperiencesReducer } from "./Reducers";
+import { ProfileReducer, ExperiencesReducer, PostsReducer } from "./Reducers";
 
 // All reducers
-const rootReducer = combineReducers({ ProfileReducer, ExperiencesReducer });
+const rootReducer = combineReducers({ ProfileReducer, ExperiencesReducer, PostsReducer });
 
 function configureStore() {
   return createStore(

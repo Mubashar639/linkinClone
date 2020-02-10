@@ -1,13 +1,11 @@
-body {
-
-}
-
+/* Navigation */
 .nav-link {
-  color: rgb(255, 255, 255)!important;
+  color: rgb(255, 255, 255) !important;
 }
 
 .nav-li-bg {
-  background-color: #283E4A;
+  background-color: #233e4c;
+  margin: 0 auto;
 }
 
 .li-logo-bg {
@@ -15,6 +13,36 @@ body {
   border-radius: 20%;
 }
 
+.li-icon {
+  font-size: 40px;
+  color: rgb(65, 112, 214);
+  font-size: 40px;
+}
+
+.navbar {
+  margin-bottom: 2.5rem;
+}
+
+.nav-link {
+  margin-left: 0.5rem;
+  text-align: center;
+}
+
+.nav-icon {
+  font-size: 20px;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.nav {
+  margin: 0px 86.5px;
+}
+
+.vl {
+  border-left: 1px solid white;
+  height: 51px;
+}
+
+/* Text error */
 .red-text {
   font-weight: 900;
   color: rgb(179, 8, 8);

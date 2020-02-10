@@ -1,4 +1,4 @@
-import { API_URL, PROFILES, EXPERIENCES } from "./constAPI";
+import { API_URL, PROFILES, EXPERIENCES, POSTS } from "./constAPI";
 import PropTypes from "prop-types";
 
 const createAPIQuery = urlGenerator => async (...params) => {
@@ -21,9 +21,7 @@ const createAPIQuery = urlGenerator => async (...params) => {
 };
 
 // Profiles
-export const getProfiles = createAPIQuery(
-  () => `${API_URL}${PROFILES}`
-);
+export const getProfiles = createAPIQuery(() => `${API_URL}${PROFILES}`);
 
 export const getOneProfileByUsername = createAPIQuery(
   username => `${API_URL}${PROFILES}/user/${username}`
@@ -33,6 +31,9 @@ export const getOneProfileByUsername = createAPIQuery(
 export const getExperiencesProfile = createAPIQuery(
   username => `${API_URL}${EXPERIENCES}/${username}`
 );
+
+// Posts
+export const getPosts = createAPIQuery(() => `${API_URL}${POSTS}`);
 
 createAPIQuery.propTypes = {
   url: PropTypes.string,
