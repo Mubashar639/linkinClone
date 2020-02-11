@@ -2,7 +2,8 @@ import { PostsActions } from "../Actions";
 
 function PostsReducer(
   state = {
-    posts: {}
+    posts: [],
+    error: null
   },
   action
 ) {
@@ -18,6 +19,11 @@ function PostsReducer(
       return {
         ...state,
         posts: action.data
+      };
+    case PostsActions.GET_POSTS_ERROR:
+      return {
+        ...state,
+        error: action.error
       };
     default:
       return state;

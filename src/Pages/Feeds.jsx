@@ -11,7 +11,7 @@ const Feed = () => {
     dispatch(PostsMiddleware.getAllPosts());
   }, [dispatch]);
 
-  let posts = useSelector((state=>state.ProfileReducer.posts))
+  let posts = useSelector((state=>state.PostsReducer.posts))
 
   console.log("=======Get all potsts ======", posts);
 
