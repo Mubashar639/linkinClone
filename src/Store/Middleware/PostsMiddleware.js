@@ -6,7 +6,7 @@ class PostsMiddleware {
     return dispatch => {
       dispatch(PostsActions.getAllPost());
       getPosts()
-        .then(dispatch(PostsActions.getAllPostSuccess()))
+        .then(data => dispatch(PostsActions.getAllPostSuccess(data)))
         .catch(error => {
           dispatch(PostsActions.getAllPostError(error));
         });

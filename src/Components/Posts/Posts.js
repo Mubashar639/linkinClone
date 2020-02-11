@@ -11,21 +11,13 @@ import {
   Button
 } from "reactstrap";
 
-const Posts = () => {
-  const dispatch = useDispatch();
-  const { posts } = useSelector(state => ({
-    posts: state.PostsReducer.posts
-  }));
+const Posts = (props) => {
+ 
 
-  console.log("My Posts on the way ???", posts);
-
-  useEffect(() => {
-    dispatch(PostsMiddleware.getAllPosts());
-  }, [dispatch]);
 
   return (
     <>
-      hello
+<div>{props.post.text}</div>
     </>
   );
 };
