@@ -11,13 +11,10 @@ import {
   Button
 } from "reactstrap";
 
-const Posts = (props) => {
- 
-
-
+const Posts = props => {
   return (
     <>
-<div>{props.post.text}</div>
+      <div>{props.post.text}</div>
     </>
   );
 };
